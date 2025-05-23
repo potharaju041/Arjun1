@@ -1,0 +1,15 @@
+<table id="numTable">
+  <tr><th onclick="sortNumTable()">Score</th></tr>
+  <tr><td>55</td></tr>
+  <tr><td>89</td></tr>
+  <tr><td>34</td></tr>
+</table>
+
+<script>
+function sortNumTable() {
+  const table = document.getElementById("numTable");
+  const rows = [...table.rows].slice(1);
+  rows.sort((a, b) => +a.cells[0].innerText - +b.cells[0].innerText);
+  rows.forEach(row => table.appendChild(row));
+}
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sort Dates</title>
+</head>
+<body>
+
+<h2>Sort Dates</h2>
+<ul id="dateList">
+  <li>2023-11-05</li>
+  <li>2022-01-15</li>
+  <li>2025-03-23</li>
+</ul>
+
+<button onclick="sortDates()">Sort by Date</button>
+
+<script>
+function sortDates() {
+  const list = document.getElementById("dateList");
+  const items = Array.from(list.getElementsByTagName("li"));
+
+  items.sort((a, b) => new Date(a.textContent) - new Date(b.textContent));
+
+  list.innerHTML = "";
+  items.forEach(item => list.appendChild(item));
+}
+</script>
+
+</body>
+</html>
